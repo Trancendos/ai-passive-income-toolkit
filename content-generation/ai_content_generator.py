@@ -47,13 +47,18 @@ class AIContentGenerator:
         """
         
         try:
+            # Estimate tokens needed for the blog post
+            # Average token length is ~4 characters, or 0.75 words
+            # Add a buffer for prompt, formatting, etc.
+            estimated_tokens = int(word_count * 1.5)
+
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "You are an expert content writer specializing in engaging, SEO-friendly blog posts."},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=1500,
+                max_tokens=estimated_tokens,
                 temperature=0.7
             )
             
@@ -78,13 +83,15 @@ class AIContentGenerator:
                 elif current_section == "content" and line.strip():
                     body += line + "\n"
             
+            full_content = title + "\n" + body
+
             return {
                 "title": title,
                 "content": body.strip(),
                 "tags": [tag.strip() for tag in tags.split(",") if tag.strip()],
                 "topic": topic,
                 "target_audience": target_audience,
-                "word_count": len(body.split()),
+                "word_count": len(full_content.split()),
                 "generated_at": datetime.now().isoformat(),
                 "status": "success"
             }
