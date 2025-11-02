@@ -1,0 +1,38 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "04:00" # Adjust time as needed
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "fix"
+    auto-merge: true
+    ignore:
+      - dependency-name: "*"
+        versions: ["*"]
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "04:00" # Adjust time as needed
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "fix"
+    auto-merge: true
+    ignore:
+      - dependency-name: "*"
+        versions: ["*"]
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "04:00" # Adjust time as needed
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "fix"
+    auto-merge: true
+    ignore:
+      - dependency-name: "*"
+        versions: ["*"]
