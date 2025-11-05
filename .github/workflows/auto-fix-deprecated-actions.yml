@@ -25,8 +25,8 @@ jobs:
         echo "Scanning for deprecated actions/cache versions..."
         DEPRECATED_FOUND=false
         
-        # Search for actions/cache@v1 or actions/cache@v2
-        if grep -r "actions/cache@v[12]" .github/workflows/ 2>/dev/null; then
+        # Search for actions/cache@v1.x or actions/cache@v2.x (including patch versions)
+        if grep -rE "actions/cache@v[12](\.[0-9]+)*" .github/workflows/ 2>/dev/null; then
           echo "Found deprecated actions/cache versions"
           DEPRECATED_FOUND=true
         else
@@ -42,11 +42,11 @@ jobs:
         
         # Find all workflow files
         find .github/workflows -name "*.yml" -o -name "*.yaml" | while read -r file; do
-          # Replace actions/cache@v1 with actions/cache@v4
-          sed -i 's|actions/cache@v1|actions/cache@v4|g' "$file"
+          # Replace actions/cache@v1.x with actions/cache@v4 (including patch versions)
+          sed -i -E 's|actions/cache@v1(\.[0-9]+)*|actions/cache@v4|g' "$file"
           
-          # Replace actions/cache@v2 with actions/cache@v4
-          sed -i 's|actions/cache@v2|actions/cache@v4|g' "$file"
+          # Replace actions/cache@v2.x with actions/cache@v4 (including patch versions)
+          sed -i -E 's|actions/cache@v2(\.[0-9]+)*|actions/cache@v4|g' "$file"
           
           echo "Processed: $file"
         done
