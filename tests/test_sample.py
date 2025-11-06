@@ -3,5 +3,4 @@ def test_basic_arithmetic():
     assert 1 + 1 == 2
 
 def test_self_debug_placeholder():
-    # placeholder test that can be extended for simple repo-level checks
-    assert True
+    pass
