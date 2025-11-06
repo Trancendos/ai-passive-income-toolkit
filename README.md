@@ -148,6 +148,7 @@ ai-passive-income-toolkit/
 - [API Documentation](docs/api-documentation/)
 - [Case Studies](docs/case-studies/)
 - [Best Practices](docs/best-practices/)
+- [CI Runner Notes](docs/ci-runner-notes.md) - GitHub Actions workflow debugging guide
 
 ## 🤝 Contributing
 
