@@ -29,7 +29,7 @@ No. This is purely informational output from Git and does not indicate any failu
 The hint appears during the internal operation of the `actions/checkout@v4` action. Since this happens within the action's implementation, we cannot directly control or suppress it from our workflow configuration without:
 
 1. Modifying the checkout action itself (not recommended)
-2. Running git config before checkout (not possible since checkout happens first)
+2. Running git config before checkout (not effective - checkout's internal git init wouldn't respect it)
 3. Using a custom action (unnecessary complexity)
 
 #### Recommendations
