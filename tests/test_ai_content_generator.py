@@ -171,7 +171,7 @@ class TestGenerateBlogPost:
 
         assert 'word_count' in result
         assert isinstance(result['word_count'], int)
-        assert result['word_count'] > 0
+        assert result['word_count']
 
     @patch('content_generation.ai_content_generator.openai.ChatCompletion.create')
     def test_generate_blog_post_api_error(self, mock_create, generator):
@@ -240,7 +240,7 @@ class TestGenerateContentCalendar:
 
         result = generator.generate_content_calendar(niche="Test Niche", num_posts=5)
 
-        assert len(result['ideas']) > 0
+        assert result['ideas']
         first_idea = result['ideas'][0]
 
         # Verify idea structure
@@ -270,8 +270,8 @@ class TestGenerateContentCalendar:
 
         result = generator.generate_content_calendar(niche="Test Niche")
 
-        assert result['total_ideas'] == len(result['ideas'])
         assert result['total_ideas'] == 2  # Based on mock response
+        assert len(result['ideas']) == 2
 
     @patch('content_generation.ai_content_generator.openai.ChatCompletion.create')
     def test_generate_content_calendar_api_error(self, mock_create, generator):
@@ -341,7 +341,7 @@ class TestIntegration:
 
         assert calendar['status'] == 'success'
         assert blog_post['status'] == 'success'
-        assert len(calendar['ideas']) > 0
+        assert calendar['ideas']
 
 
 class TestEdgeCases:
