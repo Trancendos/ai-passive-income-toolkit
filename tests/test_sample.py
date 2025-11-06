@@ -6,4 +6,4 @@ This ensures the CI pipeline can run pytest successfully.
 
 def test_sample():
     """A minimal test to ensure pytest can collect at least one test."""
-    assert True, "This is a basic sanity test"
+    pass
