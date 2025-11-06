@@ -20,6 +20,9 @@ parts/
 sdist/
 var/
 wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
@@ -54,6 +57,7 @@ ENV/
 env.bak/
 venv.bak/
 
+# IDEs
 # IDE
 .vscode/
 .idea/
