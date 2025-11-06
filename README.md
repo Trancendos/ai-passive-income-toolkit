@@ -163,6 +163,7 @@ This repository uses GitHub Actions for continuous integration and testing:
 - **Multi-version Support**: Matrix testing across Python versions
 
 For detailed CI/CD documentation, see [docs/ci/](docs/ci/).
+- [CI Runner Notes](docs/ci-runner-notes.md) - GitHub Actions workflow debugging guide
 
 ## 🤝 Contributing
 
