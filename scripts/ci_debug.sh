@@ -9,7 +9,7 @@ echo "Looking for test files matching pytest naming patterns..."
 TEST_FILES=$(git ls-files -- "tests/test_*.py" "test_*.py" || true)
 # fallback: use find to locate possible test files
 if [ -z "${TEST_FILES}" ]; then
-  TEST_FILES=$(find . -maxdepth 4 -type f \( -name 'test_*.py' -o -name 'tests.py' \) -print || true)
+  TEST_FILES=$(find . -maxdepth 4 -type f \( -name 'test_*.py' -o -name '*_test.py' \) -print || true)
 fi
 
 if [ -z "${TEST_FILES}" ]; then
