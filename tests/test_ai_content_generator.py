@@ -375,8 +375,9 @@ class TestEdgeCases:
         mock_response.choices[0].message.content = "This is not properly formatted"
         mock_create.return_value = mock_response
 
-        # Result is still success even if parsing doesn't find expected format
-        generator.generate_blog_post(topic="Test")
+        result = generator.generate_blog_post(topic="Test")
 
-        # Should return success even if parsing doesn't find expected format
+        # Verify API was called and function handles malformed response gracefully
         assert mock_create.called
+        assert result['status'] == 'success'
+        assert 'generated_at' in result
