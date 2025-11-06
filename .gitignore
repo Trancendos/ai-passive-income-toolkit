@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# C extensions
+*.so
+
 # Distribution / packaging
 .Python
 build/
@@ -20,6 +23,12 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
 
 # PyInstaller
 *.manifest
@@ -28,12 +37,14 @@ wheels/
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
 
@@ -47,6 +58,7 @@ env.bak/
 venv.bak/
 
 # IDEs
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -56,3 +68,6 @@ venv.bak/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project specific
+ai_content_examples.json
