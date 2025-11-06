@@ -148,10 +148,43 @@ ai-passive-income-toolkit/
 - [API Documentation](docs/api-documentation/)
 - [Case Studies](docs/case-studies/)
 - [Best Practices](docs/best-practices/)
+- [CI/CD Documentation](docs/ci/)
+  - [GitHub Actions Runner Setup](docs/ci/github-actions-runner-setup.md)
+  - [Contributing to CI/CD](docs/ci/CONTRIBUTING-CI.md)
+  - [Troubleshooting Guide](docs/ci/TROUBLESHOOTING.md)
+
+## 🔄 CI/CD Pipeline
+
+This repository uses GitHub Actions for continuous integration and testing:
+
+- **Automated Testing**: Tests run on Python 3.9, 3.10, and 3.11
+- **Code Linting**: flake8 ensures code quality
+- **Dependency Caching**: Fast builds with intelligent caching
+- **Multi-version Support**: Matrix testing across Python versions
+
+For detailed CI/CD documentation, see [docs/ci/](docs/ci/).
+- [CI Runner Notes](docs/ci-runner-notes.md) - GitHub Actions workflow debugging guide
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pull requests.
+
+### Development Workflow
+```bash
+# Clone and setup
+git clone https://github.com/Trancendos/ai-passive-income-toolkit.git
+cd ai-passive-income-toolkit
+pip install -r requirements.txt
+pip install flake8 pytest
+
+# Run tests locally
+pytest -v
+
+# Check code style
+flake8 .
+```
+
+See [CI/CD Contributing Guide](docs/ci/CONTRIBUTING-CI.md) for more details.
 
 ## 📄 License
 

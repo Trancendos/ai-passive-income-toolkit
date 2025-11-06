@@ -20,12 +20,16 @@ parts/
 sdist/
 var/
 wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
+PIPFILE.lock
 
 # PyInstaller
 *.manifest
@@ -123,6 +127,8 @@ dmypy.json
 .pyre/
 
 # IDE settings
+# IDEs
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -138,3 +144,9 @@ config/api_keys.env
 .env
 .env.*
 !.env.example
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+ai_content_examples.json
