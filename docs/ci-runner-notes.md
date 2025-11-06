@@ -53,7 +53,7 @@ Messages like "Cache hit for restore-key: Linux-pip-..." indicate successful cac
 If your workflow is failing, look for:
 
 1. **Non-zero exit codes**: Steps that exit with code != 0
-2. **Error messages**: Lines containing "ERROR" or "FAILED"  
+2. **Error messages**: Lines containing "ERROR" or "FAILED"
 3. **Timeout messages**: Indications that a step exceeded its time limit
 4. **Missing dependencies**: Package installation failures
 5. **Test failures**: Specific test cases that failed
