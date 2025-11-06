@@ -41,7 +41,7 @@ jobs:
         echo "Replacing deprecated actions/cache versions with v4..."
         
         # Find all workflow files
-        find .github/workflows -name "*.yml" -o -name "*.yaml" | while read -r file; do
+        find .github/workflows \( -name "*.yml" -o -name "*.yaml" \) | while read -r file; do
           # Replace actions/cache@v1.x with actions/cache@v4 (including patch versions)
           sed -i -E 's#actions/cache@v1(\.[0-9]+){0,2}([^0-9.]|$)#actions/cache@v4\2#g' "$file"
           
