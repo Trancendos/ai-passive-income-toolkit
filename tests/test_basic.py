@@ -7,7 +7,7 @@ This test will pass and allow the CI workflow to complete successfully.
 def test_basic_import():
     """Test that Python imports work correctly."""
     import sys
-    assert sys.version_info >= (3, 9), "Python version should be 3.9 or higher"
+    assert sys.version_info[:2] >= (3, 9), "Python version should be 3.9 or higher"
 
 
 def test_requirements_file_exists():

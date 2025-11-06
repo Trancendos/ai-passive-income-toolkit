@@ -135,6 +135,6 @@ Thumbs.db
 
 # API keys and secrets
 config/api_keys.env
-*.env
+.env
 .env.*
 !.env.example
