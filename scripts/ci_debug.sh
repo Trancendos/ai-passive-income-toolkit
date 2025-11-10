@@ -23,7 +23,7 @@ echo
 echo "Running pytest collection to show what pytest would collect..."
 # Collect-only; pytest returns exit code 5 when no tests are collected
 set +e
-pytest --maxfail=1 --collect-only -q
+pytest --collect-only -q
 rc=$?
 set -e
 
