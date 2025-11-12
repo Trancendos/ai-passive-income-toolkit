@@ -6,10 +6,14 @@ ls -la .
 echo
 echo "Looking for test files matching pytest naming patterns..."
 # First try to list tracked files matching common test patterns
-TEST_FILES=$(git ls-files -- "tests/test_*.py" "test_*.py" || true)
+TEST_FILES=$(git ls-files -- "tests/test_*.py" "tests/*_test.py" "test_*.py" "*_test.py" || true)
 # fallback: use find to locate possible test files
 if [ -z "${TEST_FILES}" ]; then
-  TEST_FILES=$(find . -maxdepth 4 -type f \( -name 'test_*.py' -o -name '*_test.py' \) -print || true)
+  if [ -d "tests" ]; then
+    TEST_FILES=$(find tests -maxdepth 4 -type f \( -name 'test_*.py' -o -name '*_test.py' \) -print || true)
+  else
+    TEST_FILES=""
+  fi
 fi
 
 if [ -z "${TEST_FILES}" ]; then
