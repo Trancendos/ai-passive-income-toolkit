@@ -13,3 +13,4 @@ sqlalchemy==2.0.19
 psycopg2-binary==2.9.7
 redis==4.6.0
 celery==5.3.1
+urllib3>=2.6.0 # not directly required, pinned by Snyk to avoid a vulnerability
